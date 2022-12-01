@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div v-for="post in posts" :key="p ost._id" class="card my-5">
+    <div v-for="post in posts" :key="post._id" class="card my-5">
       <div class="card-content">
         <div class="media">
           <div class="media-content">
