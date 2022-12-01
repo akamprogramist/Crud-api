@@ -16,7 +16,12 @@
       </div>
       <div class="card">
         <footer class="card-footer">
-          <button class="card-footer-item button is-warning">Edit</button>
+          <button
+            @click="editPost(post._id)"
+            class="card-footer-item button is-warning"
+          >
+            Edit
+          </button>
           <button
             @click="removePost(post._id)"
             class="card-footer-item button is-danger"
@@ -31,6 +36,8 @@
 
 <script setup>
 import { onMounted, ref } from "vue";
+import { useRouter } from "vue-router";
+const router = useRouter();
 const posts = ref([]);
 const API_URL = "http://localhost:5000/posts";
 onMounted(() => {
@@ -50,5 +57,13 @@ async function removePost(_id) {
     method: "DELETE",
   });
   getPosts();
+}
+async function editPost(_id) {
+  router.push({
+    name: "Update",
+    params: {
+      id: _id,
+    },
+  });
 }
 </script>
