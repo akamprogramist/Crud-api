@@ -1,7 +1,6 @@
-<template lang="">
-  <div></div>
-</template>
-<script>
-export default {};
+<script setup>
+import PostForm from "../components/PostForm.vue";
 </script>
-<style lang=""></style>
+<template>
+  <PostForm />
+</template>

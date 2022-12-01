@@ -4,15 +4,26 @@
       <div class="card-content">
         <div class="media">
           <div class="media-content">
-            <p class="title is-4">John Smith</p>
+            <p class="title is-4">{{ post.title }}</p>
           </div>
         </div>
 
         <div class="content">
           {{ post.content }}
           <p />
-          <strong>{{ post.creator }}</strong>
+          <strong>Creator: {{ post.creator }}</strong>
         </div>
+      </div>
+      <div class="card">
+        <footer class="card-footer">
+          <button class="card-footer-item button is-warning">Edit</button>
+          <button
+            @click="removePost(post._id)"
+            class="card-footer-item button is-danger"
+          >
+            Delete
+          </button>
+        </footer>
       </div>
     </div>
   </div>
@@ -33,5 +44,11 @@ async function getPosts() {
   } catch (error) {
     console.log(error);
   }
+}
+async function removePost(_id) {
+  const response = await fetch(`${API_URL}/${_id}`, {
+    method: "DELETE",
+  });
+  getPosts();
 }
 </script>

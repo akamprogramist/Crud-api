@@ -10,8 +10,9 @@ router.get("/", async (req, res) => {
   try {
     const allPosts = await Post.find();
     res.json(allPosts);
-  } catch (error) {}
-  console.log(error);
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 router.get("/:id", async (req, res) => {
