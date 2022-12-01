@@ -19,14 +19,19 @@
 </template>
 
 <script setup>
+import { onMounted, ref } from "vue";
 const posts = ref([]);
 const API_URL = "http://localhost:5000/posts";
-
+onMounted(() => {
+  getPosts();
+});
 async function getPosts() {
   try {
     const response = await fetch(API_URL);
     const json = await response.json();
     posts.value = json;
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 }
 </script>
