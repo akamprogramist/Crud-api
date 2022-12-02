@@ -3,7 +3,6 @@
 </template>
 
 <script setup>
-import { async } from "rxjs";
 import { ref, onMounted } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import PostForm from "../components/PostForm.vue";
