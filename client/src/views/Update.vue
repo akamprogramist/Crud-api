@@ -8,7 +8,7 @@ import { useRouter, useRoute } from "vue-router";
 import PostForm from "../components/PostForm.vue";
 const router = useRouter();
 const route = useRoute();
-const API_URL = "http://localhost:5000/posts";
+const API_URL = "https://crudwithmongodb.adaptable.app/posts";
 const post = ref({
   title: "",
   content: "",

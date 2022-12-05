@@ -39,7 +39,7 @@ import { onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
 const router = useRouter();
 const posts = ref([]);
-const API_URL = "http://localhost:5000/posts";
+const API_URL = "https://crudwithmongodb.adaptable.app/posts";
 onMounted(() => {
   getPosts();
 });

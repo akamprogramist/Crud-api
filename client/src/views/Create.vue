@@ -6,7 +6,7 @@
 import PostForm from "../components/PostForm.vue";
 import { reactive } from "vue";
 import { useRouter } from "vue-router";
-const API_URL = "http://localhost:5000/posts";
+const API_URL = "https://crudwithmongodb.adaptable.app/posts";
 const router = useRouter();
 const post = reactive({
   title: "",
